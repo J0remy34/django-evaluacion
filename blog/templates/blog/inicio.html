@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8fafc;
+            margin: 40px;
+        }
+
+        .contenedor {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .publicacion {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        a {
+            color: #7c3aed;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="contenedor">
+    <h1>Mi Blog</h1>
+
+    <p>
+        <a href="/blog/sobre/">Sobre este blog</a>
+    </p>
+
+    {% for publicacion in publicaciones %}
+        <article class="publicacion">
+            <h2>{{ publicacion.titulo }}</h2>
+            <p><strong>Autor:</strong> {{ publicacion.autor }}</p>
+            <p>{{ publicacion.contenido }}</p>
+        </article>
+    {% endfor %}
+</div>
+
+</body>
+</html>
